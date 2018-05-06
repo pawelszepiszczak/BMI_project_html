@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+    <html>
+	<head>
+	<title>Kalkulator BMI</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="style/bootstrap.min.css">
+	<link rel="stylesheet" href="style/naszestyle.css">
+	<link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+	<link href="https://fonts.googleapis.com/css?family=Do+Hyeon|Gugi" rel="stylesheet">
+
+	<script>
+	function obliczBMI() {
+	naszwzrost = document.getElementById("wzrost").value;
+	naszawaga = document.getElementById("waga").value;
+
+	if (naszwzrost > 149 && naszwzrost < 221 && naszawaga > 39 && naszawaga < 201){
+	naszebmi = naszawaga / Math.pow(naszwzrost,2) * 10000;
+	naszeobliczone = naszebmi.toFixed(2);
+	document.getElementById("wynik").innerHTML =  naszeobliczone;
+	document.getElementById("pierwszyplan").style.display="none";
+	document.getElementById("drugiplan").style.display="block";
+	 var x = document.getElementsByClassName("gora");
+		x[0].style.paddingTop = "0px";
+		x[0].style.paddingBottom = "0px";
+		x[0].style.fontSize = "smaller";
+
+		if(naszebmi < 18.50){
+		wyrok = "niedowaga";
+		document.getElementById("wyrok").style.color="#fff37d";
+		document.getElementById("wyrok").innerHTML =  wyrok;
+		document.getElementById("obrazek").src = "obrazki/niedowaga.png";
+
+		}else if (naszebmi >=18.50 && naszebmi < 24.90){
+		wyrok = "waga prawidłowa";
+		document.getElementById("wyrok").style.color="#c9f4b3";
+		document.getElementById("wyrok").innerHTML =  wyrok;
+		document.getElementById("obrazek").src = "obrazki/prawidlowa.png";
+		}else if (naszebmi >=24.90 && naszebmi < 29.90){
+		wyrok = "nadwaga";
+		document.getElementById("wyrok").style.color="#f9e883";
+		document.getElementById("wyrok").innerHTML =  wyrok;
+		document.getElementById("obrazek").src = "obrazki/nadwaga.png";
+		} else{
+		wyrok = "otyłość";
+		document.getElementById("wyrok").style.color="#ff5d5d";
+		document.getElementById("wyrok").innerHTML =  wyrok;
+		document.getElementById("obrazek").src = "obrazki/otylosc.png";
+		}
+	}else{
+	alert("Niepoprawne dane. Wzrost: 150 - 220, Waga: 40 - 200");
+	}
+	}
+	</script>
+	<script>
+	function powrot() {
+	document.getElementById("pierwszyplan").style.display="block";
+	document.getElementById("drugiplan").style.display="none";
+	 var x = document.getElementsByClassName("gora");
+		x[0].style.paddingTop = "20px";
+		x[0].style.paddingBottom = "20px";
+		x[0].style.fontSize = "";
+	}
+	</script>
+
+     </head>
+     <body>
+	<div class="container">
+		<div class="row">
+			  <div class="col-12 ramka">
+			  	  <div class="row">
+					  <div class="col-5 gora doprawejlogo"><i class="icon ion-ios-nutrition" id="ikonalogo"></i></div>
+						 <div class="col-7 logonapis dolewej"><span class="logokolor"><strong>KALKULATOR BMI</strong></span>
+						 <br/>
+						 <span class="malynapis">Oblicz swój wskaźnik masy ciała</span>
+						 </div>
+				  </div>
+			  </div>
+
+		</div>
+	</div>
+
+	<div class="container-fluid glowne">
+		<div class="zdjecietlo">
+			<div class="row wysokosc bezmarginu">
+				<div class="col-xs-12 col-md-7 col-lg-5 logonapis napis tabelka rounded">
+					<div id="pierwszyplan">
+						<div class="row mojpadding przerwa">
+						<div class="col-6 doprawej">Wzrost:</div>
+						<div class="col-6 dolewej "><input  type="number"  min="150" max="220" id="wzrost" placeholder="cm" onkeypress="return event.charCode >= 48 && event.charCode <= 57"></div>
+						</div>
+						
+						<div class="row przerwa">
+						<div class="col-6 doprawej">Waga:</div>
+						<div class="col-6 dolewej"><input type="number" min="40" max="200" id="waga" placeholder="kg" onkeypress="return event.charCode >= 48 && event.charCode <= 57"></div>
+						</div>
+
+						<div class="row">
+						<div class="col-6 doprawej"></div>
+						<div class="col-6"><button class="button" type="button" onclick="obliczBMI()"><span>Oblicz BMI</span></button></div>
+						</div>
+					</div>
+
+					<div id="drugiplan">
+
+						<div class="row">
+							<div class="col-xs-12 col-6 biale"> Twoje BMI wynosi: &nbsp; <span id="wynik"></span>
+							</div>
+							
+							<div class="col-xs-12 col-6 bialee">
+							<img id="obrazek" src=""><br />
+							<span id="wyrok"></span>
+							</div>
+						</div>
+
+						<button class="button" type="button" onclick="powrot()"><span>Jeszcze raz</span></button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+    </body>
+    </html>
+	
