@@ -1,0 +1,197 @@
+body{
+
+
+
+}
+.biale{
+	font-family: 'Gugi', cursive;
+	text-align:center;
+	font-size:1.5em;
+	color:#fff;
+	margin-top:1.5em;
+}
+.bialee{
+	font-family: 'Gugi', cursive;
+	text-align:center;
+	font-size:1.5em;
+	color:#fff;
+	margin: 0.4em auto;
+	
+}
+#wynik{
+	font-size:4em;
+	font-family: 'Gugi', cursive;
+	background-color:rgba(255,255,255,0.2);
+	
+}
+#drugiplan{display:none;
+}
+
+.button {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: #d80000;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 28px;
+  padding: 10px;
+  width: 100%;
+  transition: all 0.5s;
+  cursor: pointer;
+  		font-family: 'Gugi', cursive;
+		margin-bottom:1em;
+
+}
+.button:hover{    background-color: #b00000;}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+
+}
+
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+input {
+    width: 100%;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 3px solid #ccc;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    outline: none;
+			font-family: 'Gugi', cursive;
+}
+
+input:focus {
+    border: 3px solid #555;
+}
+.zdjecietlo {
+    /* The image used */
+    background-image: url("../obrazki/tlo.jpg");
+
+    /* Set a specific height */
+    min-height: 250px; 
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+
+}
+.logokolor{
+	color:#638e35;
+	font-size:2em;
+		font-family: 'Gugi', cursive;
+}
+#ikonalogo{
+	font-size:8em;
+	color:#4e791f;
+}
+.malynapis{
+	font-size:0.8em;
+		font-family: 'Gugi', cursive;
+}
+.gora{
+	padding-top:20px;
+	padding-bottom:20px;
+	font-family: 'Poppins', sans-serif;
+	margin:auto;
+	transition:1s;
+}
+.ramka{text-align:center;}
+.tabelka{
+	background-color:rgba(91,136,4,0.9);
+
+}
+.logonapis{
+		margin:auto;
+
+}.napis{
+
+padding-right:1em;}
+.bezmarginu{
+	margin:0;
+
+}
+.glowne{
+	padding-left:0;
+	padding-right:0;
+
+}
+.wysokosc{
+	height:400px;
+}
+.mojpadding{
+	padding-top:30px;
+}
+.przerwa{	padding-bottom:10px;}
+.doprawej{
+	font-family: 'Gugi', cursive;
+	text-align:right;
+	font-size:2em;
+	color:#fff;
+}
+.doprawejlogo{
+	text-align:right;
+}
+.dolewej{
+	text-align:left;
+}
+.test{
+	background-color:#fff;
+}
+
+@media only screen and (max-width: 600px) {
+   #ikonalogo{
+	font-size:4em;
+
+}
+.logokolor{
+
+	font-size:1em;
+
+}
+.malynapis{
+	display:none;
+}
+.biale{
+	font-size:1em;
+}
+#obrazek{
+	max-width:100px;
+}
+#wynik{
+	font-size:2em;
+}
+.bialee{
+
+	font-size:1em;
+
+
+}
+.button {
+  font-size: 20px;
+ 
+}
+
+}
